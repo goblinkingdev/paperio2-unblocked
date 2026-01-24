@@ -250,11 +250,9 @@
       document.getElementById("lng").addEventListener("click", function (e) {
         if (e.target.tagName === "LI") {
           const lang = e.target.textContent;
-          // Actualizar título
           const title = document.querySelector(`title[data-lang="${lang}"]`);
           if (title) document.title = title.textContent;
 
-          // Actualizar metadatos
           document
             .querySelectorAll(`meta[data-lang="${lang}"]`)
             .forEach((meta) => {
@@ -267,7 +265,6 @@
               }
             });
 
-          // Actualizar clase activa
           document
             .querySelectorAll("#lng li")
             .forEach((li) => li.classList.remove("active"));
